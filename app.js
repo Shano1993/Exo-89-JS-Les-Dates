@@ -27,19 +27,14 @@ dateAjd2.setDate(dateAjd.getDate() + 2);
 dateAjd2.setHours(dateAjd.getHours() + 6);
 date2.innerHTML = dateAjd2;
 
-if (dateAjd2 > dateAjd) {
-    difference.innerHTML = "La date + 2 jours et 6 heures est plus grande que la date";
-}
 
-if (dateAjd < dateAjd2) {
-    difference.innerHTML = "La date d'aujourd'hui est plus petite que la date + 2 jours et 6 heures"
-}
+let interval = dateAjd.getTime() - dateAjd2.getTime();
+let days = Math.floor(interval / 60 / 60 / 24 / 1000);
+let hours = Math.floor((interval - (days * 60 * 60 * 24 * 1000)) / 60 / 60 / 1000);
 
-if (dateAjd2 >= dateAjd) {
-    difference.innerHTML = "Ce n'est pas correct, il y a 2 jours et 6 heures d'écart";
-}
+difference.innerHTML += days + " jour(s) ET <br>";
+difference.innerHTML += hours + " heure(s) ";
 
-if (dateAjd <= dateAjd2) {
-    difference.innerHTML = "Ce n'est pas correct non plus";
-}
+
+
 
