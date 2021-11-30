@@ -28,12 +28,15 @@ dateAjd2.setHours(dateAjd.getHours() + 6);
 date2.innerHTML = dateAjd2;
 
 
-let interval = dateAjd.getTime() - dateAjd2.getTime();
+let interval = dateAjd2.getTime() - dateAjd.getTime();
 let days = Math.floor(interval / 60 / 60 / 24 / 1000);
 let hours = Math.floor((interval - (days * 60 * 60 * 24 * 1000)) / 60 / 60 / 1000);
 
-difference.innerHTML += days + " jour(s) ET <br>";
-difference.innerHTML += hours + " heure(s) ";
+if (dateAjd2 > dateAjd) {
+    difference.innerHTML += days + " jour(s) ET <br>";
+    difference.innerHTML += hours + " heure(s) ";
+}
+
 
 
 
